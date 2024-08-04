@@ -1,5 +1,5 @@
 # TOBIRAPOLIS SUMMER FESTIVAL
-TBR夏祭りのwebページ管理用リポジトリ
+TBR夏祭りだああああああ
 
 # pushするまでの環境構築
 **※githubのアカウントを持っていてログインできている前提です**
