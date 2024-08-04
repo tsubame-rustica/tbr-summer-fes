@@ -1,6 +1,7 @@
 body {
     margin: 0;
     padding: 0;
+    width: 100%;
 }
 
 .hero-area {
@@ -39,10 +40,11 @@ body {
     display: block;
 }
 
-@media screen and (min-width:1024px){
+
+@media screen and (min-width:820px){
 
     .sub-title h1 {
-        font-size: 5rem;
+        font-size: 4rem;
         font-weight: bold;
     }
     
@@ -50,6 +52,8 @@ body {
         display: inline;
     }
 }
+
+
 
 /* .title {
     position: relative;
