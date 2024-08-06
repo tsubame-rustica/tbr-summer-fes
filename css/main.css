@@ -2,35 +2,127 @@ body {
     margin: 0;
     padding: 0;
     width: 100%;
+    overflow-x: hidden;
 }
 
 header {
     position: absolute;
     display: flex;
     width: 100%;
-    height: 10;
+    height: 60px;
     background-color: rgba(255, 255, 255, 0.5);
     z-index: 100;
 }
 
 .header-title {
     position: relative;
-    top: 50%;
+    top: 5px;
     left: 3%;
     color: #fff;
+    font-size: medium;
 }
 
 .header-link {
-    position: absolute;
-    right: 20px;
+    display: none;
 }
+
+#hamburger-check {
+    opacity: 0;
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    z-index: 300;
+}
+
+.hamburger-menu {
+    position: absolute;
+    width: 40px;
+    height: 35px;
+    right: 10px;
+    top: 5px;
+    cursor: pointer;
+}
+
+.hamburger-menu span {
+    display: block;
+    position: relative;
+    width: 120%;
+    height: 2px;
+    right: 5px;
+    color: #fff;
+    background-color: #fff;
+    transition: all 0.6s;
+}
+
+.hamburger-menu span:first-of-type {
+    top: 15%;
+}
+
+.hamburger-menu span:nth-of-type(2) {
+    top: 50%;
+}
+
+.hamburger-menu span:last-of-type {
+    top: 85%;
+}
+
+.menu {
+    transform: translateX(100%);
+    background-color: rgba(255, 255, 255, 0.5);
+    position: fixed;
+    top: 60px; /*60はヘッダーに被らないように設定された数字*/
+    right: 0px;
+    width: 100%;
+    height: 100%;
+    transition: all 0.6s;
+}
+
+
+.menu ul li {
+    color: #fff;
+    border-bottom: 2px solid #ddd;
+}
+
+.menu ul li a {
+    font-size: larger;
+    color: #fff;
+    line-height: 400%;
+    text-align: center;
+}
+
+.menu ul li a:hover {
+    color: #f0f0f0;
+}
+
+#hamburger-check:checked + .hamburger-menu + .menu {
+    transform: translateX(0%);
+}
+
+#hamburger-check:checked ~ .hamburger-menu span:first-of-type {
+    top: 50%;
+    transform: rotate(45deg);
+}
+
+#hamburger-check:checked ~ .hamburger-menu span:nth-of-type(2) {
+    display: none;
+}
+
+#hamburger-check:checked ~ .hamburger-menu span:last-of-type {
+    top: 50%;
+    transform: rotate(-45deg);
+} /*行数多くてごめん。これしか思いつかなかったんや。何かいい方法あったら教えてください。*/
+
 .header-link a {
     position: relative;
-    top: 25px;
+    top: 20px;
     margin: 10px;
     font-size: 25px;
     text-decoration: none;
     color: #fff;
+}
+
+.header-link a:hover {
+    color:#f0f0f0
 }
 
 .hero-area {
@@ -71,6 +163,20 @@ header {
 
 
 @media screen and (min-width:820px){
+
+    .header-link {
+        display: inline;
+        position: absolute;
+        right: 20px;
+    }
+
+    .hamburger-menu {
+        display: none;
+    }
+
+    .header-title {
+        font-size: large;
+    }
 
     .sub-title h1 {
         font-size: 4rem;
